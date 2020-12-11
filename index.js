@@ -7,5 +7,8 @@ const puzzleData = {
 
 const createFullGraph = (rows, cols) => {
 
+    // 2D array to hold cell contents
+    let cells = Array(rows).fill(Array(cols).fill(null));
+
     return null;
 }
