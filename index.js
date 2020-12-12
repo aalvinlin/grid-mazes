@@ -24,6 +24,36 @@ const createFullGraph = (rows, cols) => {
     // the vertex at each coordinate contains info about itself and the four possible surrounding edges
     let visited = Array(rows).fill(null);
     visited = visited.map(row => Array(cols).fill(null)); // make sure each row has a unique array
+
+    for (let row = 0; row < rows; row += 1)
+        {
+            for (let col = 0; col < cols; col += 1)
+                {
+                    let currentLocationData = {};
+
+                    // add link to vertex below
+                    if (row > 0)
+                        { currentLocationData["s"] = 1; }
+
+                    // add link to vertex above
+                    if (row < rows - 1)
+                        { currentLocationData["n"] = 1; }
+
+                    // add link to vertex to the left
+                    if (col > 0)
+                        { currentLocationData["w"] = 1; }
+
+                    // add link to vertex to the right
+                    if (col < cols - 1)
+                        { currentLocationData["e"] = 1; }
+
+                   graph[row][col] = currentLocationData;
+                }
+        }
+
+    puzzleData["cells"] = cells;
+    puzzleData["graph"] = graph;
+    puzzleData["visited"] = visited;
 }
 
 createFullGraph(3, 5);
