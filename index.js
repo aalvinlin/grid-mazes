@@ -12,18 +12,18 @@ const puzzleData = {
 const createFullGraph = (rows, cols) => {
 
     // 2D array to hold cell contents
-    puzzleData["cells"] = Array(rows).fill(Array(cols).fill(null));
+    let cells = Array(rows).fill(null);
+    cells = cells.map(row => Array(cols).fill(null)); // make sure each row has a unique array
 
     // 2D array to hold vertex and edge data
     // the vertex at each coordinate contains info about itself and the four possible surrounding edges
-    puzzleData["graph"] = Array(rows).fill(Array(cols).fill({
-        "self": null,
-        "n": null,
-        "s": null,
-        "e": null,
-        "w": null,
-    }));
+    let graph = Array(rows).fill(null);
+    graph = graph.map(row => Array(cols).fill(null)); // make sure each row has a unique array
 
+    // 2D array to hold visited vertex and edge data
+    // the vertex at each coordinate contains info about itself and the four possible surrounding edges
+    let visited = Array(rows).fill(null);
+    visited = visited.map(row => Array(cols).fill(null)); // make sure each row has a unique array
 }
 
 createFullGraph(3, 5);
