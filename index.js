@@ -67,8 +67,11 @@ const findAllSolutions = () => {
     // use a 1D array of length (rows * cols) to keep track of whether vertices are available to use
     let availableVertices = Array(puzzleData["rows"] * puzzleData["cols"]).fill(true);
 
+    // mark (0, 0), the starting point, as unavailable
+    availableVertices[0] = false;
+
     const findAllSolutionsHelper = (currentX, currentY, pathSoFar, remainingVertices) => {
-        
+
     }
 
     return findAllSolutionsHelper(0, 0, "", [...availableVertices]);
