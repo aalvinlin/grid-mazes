@@ -56,6 +56,13 @@ const createFullGraph = (rows, cols) => {
     puzzleData["visited"] = visited;
 }
 
+const setStartAndEnd = (startX, startY, endX, endY) => {
+
+    puzzleData["start"] = [startX, startY];
+    puzzleData["end"] = [endX, endY];
+}
+
+
 createFullGraph(3, 5);
 
 console.log(puzzleData);
