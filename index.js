@@ -62,6 +62,18 @@ const setStartAndEnd = (startX, startY, endX, endY) => {
     puzzleData["end"] = [endX, endY];
 }
 
+const findAllSolutions = () => {
+
+    // use a 1D array of length (rows * cols) to keep track of whether vertices are available to use
+    let availableVertices = Array(puzzleData["rows"] * puzzleData["cols"]).fill(true);
+
+    const findAllSolutionsHelper = (currentX, currentY, pathSoFar, remainingVertices) => {
+        
+    }
+
+    return findAllSolutionsHelper(0, 0, "", [...availableVertices]);
+
+}
 
 createFullGraph(3, 5);
 
