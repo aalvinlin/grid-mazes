@@ -147,11 +147,30 @@ const findAllSolutions = () => {
 
 }
 
-createFullGraph(4, 4);
-setStartAndEnd(0, 0, 4, 4);
+let graphSize = 4;
+
+createFullGraph(graphSize, graphSize);
+setStartAndEnd(0, 0, graphSize, graphSize);
 
 // console.log(puzzleData["graph"])
 
 let allPaths = findAllSolutions();
 
-console.log(allPaths);
+// console.log(allPaths);
+
+const countPathLengths = () => {
+
+    let pathLengthCounts = {};
+
+    for (let path of Array.from(allPaths))
+        {
+            if (pathLengthCounts[path.length])
+                { pathLengthCounts[path.length] += 1; }
+            else
+                { pathLengthCounts[path.length] = 1; }
+        }
+    
+    return pathLengthCounts;
+}
+
+console.log(countPathLengths())
