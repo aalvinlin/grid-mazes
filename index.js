@@ -173,4 +173,31 @@ const countPathLengths = () => {
     return pathLengthCounts;
 }
 
-console.log(countPathLengths())
+const createDecisionTree = () => {
+
+    let decisionTree = {}
+
+    for (let path of Array.from(allPaths))
+        {
+            let currentNode = decisionTree;
+
+            for (let direction of path.split(""))
+                {
+                    // create a new node for the specified direction
+                    if (!currentNode[direction])
+                        { currentNode[direction] = {}; }
+
+                    // move to new node
+                    currentNode = currentNode[direction];
+                }
+        }
+    
+    return decisionTree;
+}
+
+// console.log(JSON.stringify(decisionTree));
+
+// let paragraph = document.createElement("p");
+// document.getElementById("content").appendChild(paragraph);
+
+// paragraph.textContent = JSON.stringify(decisionTree);
