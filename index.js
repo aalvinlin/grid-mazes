@@ -195,6 +195,18 @@ const createDecisionTree = () => {
     return decisionTree;
 }
 
+const createHTMLGrid = () => {
+
+    let grid = document.createElement("div");
+    grid.id = "maze-grid";
+
+    let verticesPerRow = puzzleData["rows"] + 1;
+    let verticesPerCol = puzzleData["cols"] + 1;
+
+    
+
+}
+
 // console.log(JSON.stringify(decisionTree));
 
 // let paragraph = document.createElement("p");
