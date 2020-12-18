@@ -2,3 +2,17 @@
     font-family: Arial;
     box-sizing: border-box;
 }
+
+#maze-grid {
+    border: 1px solid black;
+}
+
+.intersection {
+    width: 10px;
+    height: 10px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+}
