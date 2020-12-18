@@ -203,9 +203,52 @@ const createHTMLGrid = () => {
     let verticesPerRow = puzzleData["rows"] + 1;
     let verticesPerCol = puzzleData["cols"] + 1;
 
-    
+    let intersection = document.createElement("div");
+    intersection.classList.add("intersection");
 
+    let segmentHorizontal = document.createElement("div");
+    segmentHorizontal.classList.add("segment");
+    segmentHorizontal.classList.add("segment-horizontal");
+
+    let segmentVertical = document.createElement("div");
+    segmentVertical.classList.add("segment-vertical");
+
+    let cell = document.createElement("div");
+    cell.classList.add("cell");
+
+    let intersectionRow = document.createElement("div");
+    intersectionRow.appendChild(intersection);
+
+    // make a row of divs with just horizontal segments and intersections
+    for (let i = 0; i < verticesPerRow; i += 1)
+        {
+            intersectionRow.appendChild(segmentHorizontal);
+            intersectionRow.appendChild(intersection);
+        }
+    
+    grid.appendChild(intersectionRow);
+
+    // make a row of cells and vertical segments
+    let cellRow = document.createElement("div");
+    cellRow.appendChild(segmentVertical);
+
+    for (let i = 0; i < verticesPerRow; i += 1)
+        {
+            cellRow.appendChild(cell);
+            cellRow.appendChild(segmentVertical);
+        }
+
+    // add pairs of intersectionRow and cellRow to grid 
+    for (let i = 0; i < verticesPerCol; i += 1)
+        {
+            grid.appendChild(cellRow);
+            grid.appendChild(intersectionRow);
+        }
+    
+    return grid;
 }
+
+document.getElementById("content").appendChild(createHTMLGrid());
 
 // console.log(JSON.stringify(decisionTree));
 
