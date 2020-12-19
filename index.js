@@ -208,10 +208,10 @@ const createHTMLGrid = () => {
 
     let segmentHorizontal = document.createElement("div");
     segmentHorizontal.classList.add("segment");
-    segmentHorizontal.classList.add("segment-horizontal");
+    segmentHorizontal.classList.add("segmentHorizontal");
 
     let segmentVertical = document.createElement("div");
-    segmentVertical.classList.add("segment-vertical");
+    segmentVertical.classList.add("segmentVertical");
 
     let cell = document.createElement("div");
     cell.classList.add("cell");
