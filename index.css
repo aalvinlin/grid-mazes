@@ -25,3 +25,17 @@
     height: 100px;
     background-color: #CCCCCC;
 }
+
+.segment {
+    background-color: #EEEEEE;
+}
+
+.segmentHorizontal {
+    width: 100px;
+    height: 10px;
+}
+
+.segmentHorizontal {
+    width: 10px;
+    height: 100px;
+}
