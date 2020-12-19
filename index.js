@@ -200,8 +200,8 @@ const createHTMLGrid = () => {
     let grid = document.createElement("div");
     grid.class = "mazeGrid";
 
-    let verticesPerRow = puzzleData["rows"] + 1;
-    let verticesPerCol = puzzleData["cols"] + 1;
+    let rows = puzzleData["rows"];
+    let cols = puzzleData["cols"];
 
     let intersection = document.createElement("div");
     intersection.classList.add("intersection");
@@ -222,7 +222,7 @@ const createHTMLGrid = () => {
     intersectionRow.appendChild(intersection.cloneNode(true));
 
     // make a row of divs with just horizontal segments and intersections
-    for (let i = 0; i < verticesPerRow; i += 1)
+    for (let i = 0; i < rows; i += 1)
         {
             intersectionRow.appendChild(segmentHorizontal.cloneNode(true));
             intersectionRow.appendChild(intersection.cloneNode(true));
@@ -235,14 +235,14 @@ const createHTMLGrid = () => {
     cellRow.classList.add("cellRow");
     cellRow.appendChild(segmentVertical.cloneNode(true));
 
-    for (let i = 0; i < verticesPerRow; i += 1)
+    for (let i = 0; i < rows; i += 1)
         {
             cellRow.appendChild(cell.cloneNode(true));
             cellRow.appendChild(segmentVertical.cloneNode(true));
         }
 
     // add pairs of intersectionRow and cellRow to grid 
-    for (let i = 0; i < verticesPerCol; i += 1)
+    for (let i = 0; i < cols; i += 1)
         {
             grid.appendChild(cellRow.cloneNode(true));
             grid.appendChild(intersectionRow.cloneNode(true));
