@@ -203,16 +203,23 @@ const createHTMLGrid = () => {
     let rows = puzzleData["rows"];
     let cols = puzzleData["cols"];
 
+    // use a div within each intersection and segment to hold the solution path
+    let path = document.createElement("div");
+    path.classList.add("path");
+
     let intersection = document.createElement("div");
     intersection.classList.add("intersection");
+    intersection.appendChild(path.cloneNode(true));
 
     let segmentHorizontal = document.createElement("div");
     segmentHorizontal.classList.add("segment");
     segmentHorizontal.classList.add("segmentHorizontal");
+    segmentHorizontal.appendChild(path.cloneNode(true));
 
     let segmentVertical = document.createElement("div");
     segmentVertical.classList.add("segment");
     segmentVertical.classList.add("segmentVertical");
+    segmentVertical.appendChild(path.cloneNode(true));
 
     let cell = document.createElement("div");
     cell.classList.add("cell");
