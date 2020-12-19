@@ -217,6 +217,7 @@ const createHTMLGrid = () => {
     cell.classList.add("cell");
 
     let intersectionRow = document.createElement("div");
+    intersectionRow.classList.add("intersectionRow");
     intersectionRow.appendChild(intersection.cloneNode(true));
 
     // make a row of divs with just horizontal segments and intersections
@@ -230,6 +231,7 @@ const createHTMLGrid = () => {
 
     // make a row of cells and vertical segments
     let cellRow = document.createElement("div");
+    cellRow.classList.add("cellRow");
     cellRow.appendChild(segmentVertical.cloneNode(true));
 
     for (let i = 0; i < verticesPerRow; i += 1)
