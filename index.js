@@ -217,38 +217,44 @@ const createHTMLGrid = () => {
     cell.classList.add("cell");
 
     let intersectionRow = document.createElement("div");
-    intersectionRow.appendChild(intersection);
+    intersectionRow.appendChild(intersection.cloneNode(true));
 
     // make a row of divs with just horizontal segments and intersections
     for (let i = 0; i < verticesPerRow; i += 1)
         {
-            intersectionRow.appendChild(segmentHorizontal);
-            intersectionRow.appendChild(intersection);
+            intersectionRow.appendChild(segmentHorizontal.cloneNode(true));
+            intersectionRow.appendChild(intersection.cloneNode(true));
         }
     
-    grid.appendChild(intersectionRow);
+    grid.appendChild(intersectionRow.cloneNode(true));
 
     // make a row of cells and vertical segments
     let cellRow = document.createElement("div");
-    cellRow.appendChild(segmentVertical);
+    cellRow.appendChild(segmentVertical.cloneNode(true));
 
     for (let i = 0; i < verticesPerRow; i += 1)
         {
-            cellRow.appendChild(cell);
-            cellRow.appendChild(segmentVertical);
+            cellRow.appendChild(cell.cloneNode(true));
+            cellRow.appendChild(segmentVertical.cloneNode(true));
         }
 
     // add pairs of intersectionRow and cellRow to grid 
     for (let i = 0; i < verticesPerCol; i += 1)
         {
-            grid.appendChild(cellRow);
-            grid.appendChild(intersectionRow);
+            grid.appendChild(cellRow.cloneNode(true));
+            grid.appendChild(intersectionRow.cloneNode(true));
         }
     
     return grid;
 }
 
 document.getElementById("content").appendChild(createHTMLGrid());
+
+let test = document.createElement("p");
+test.textContent = "this is a test";
+
+document.getElementById("content").appendChild(test);
+document.getElementById("content").appendChild(test);
 
 // console.log(JSON.stringify(decisionTree));
 
