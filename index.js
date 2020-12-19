@@ -203,6 +203,9 @@ const createHTMLGrid = () => {
     let rows = puzzleData["rows"];
     let cols = puzzleData["cols"];
 
+    let [startX, startY] = puzzleData["start"];
+    let [endX, endY] = puzzleData["end"];
+
     // use a div within each intersection and segment to hold the solution path
     let path = document.createElement("div");
     path.classList.add("path");
@@ -260,6 +263,11 @@ const createHTMLGrid = () => {
     grid.firstChild.lastChild.classList.add("cornerTopRight");
     grid.lastChild.firstChild.classList.add("cornerBottomLeft");
     grid.lastChild.lastChild.classList.add("cornerBottomRight");
+
+    console.log(grid.length, grid.childNodes.length)
+
+    // indicate the start and finish
+    grid.childNodes[grid.childNodes.length - 1 - 2 * startY].childNodes[2 * startX].firstChild.classList.add("mazeStart")
     
     return grid;
 }
