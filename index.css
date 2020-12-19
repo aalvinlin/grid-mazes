@@ -1,6 +1,12 @@
 * {
     font-family: Arial;
     box-sizing: border-box;
+
+    color: #999999;
+}
+
+body {
+    background-color: #333333;
 }
 
 .mazeGrid {
@@ -15,27 +21,27 @@
 }
 
 .intersection {
-    width: 10px;
-    height: 10px;
-    background-color: #EEEEEE;
+    width: 25px;
+    height: 25px;
+    background-color: #666666;
 }
 
 .cell {
     width: 100px;
     height: 100px;
-    background-color: #CCCCCC;
+    background-color: #999999;
 }
 
 .segment {
-    background-color: #EEEEEE;
+    background-color: #666666;
 }
 
 .segmentHorizontal {
     width: 100px;
-    height: 10px;
+    height: 25px;
 }
 
 .segmentVertical {
-    width: 10px;
+    width: 25px;
     height: 100px;
 }
