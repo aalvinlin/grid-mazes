@@ -211,6 +211,7 @@ const createHTMLGrid = () => {
     segmentHorizontal.classList.add("segmentHorizontal");
 
     let segmentVertical = document.createElement("div");
+    segmentVertical.classList.add("segment");
     segmentVertical.classList.add("segmentVertical");
 
     let cell = document.createElement("div");
@@ -251,12 +252,6 @@ const createHTMLGrid = () => {
 }
 
 document.getElementById("content").appendChild(createHTMLGrid());
-
-let test = document.createElement("p");
-test.textContent = "this is a test";
-
-document.getElementById("content").appendChild(test);
-document.getElementById("content").appendChild(test);
 
 // console.log(JSON.stringify(decisionTree));
 
