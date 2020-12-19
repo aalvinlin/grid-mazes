@@ -198,7 +198,7 @@ const createDecisionTree = () => {
 const createHTMLGrid = () => {
 
     let grid = document.createElement("div");
-    grid.id = "maze-grid";
+    grid.class = "mazeGrid";
 
     let verticesPerRow = puzzleData["rows"] + 1;
     let verticesPerCol = puzzleData["cols"] + 1;
