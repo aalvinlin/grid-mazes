@@ -247,6 +247,12 @@ const createHTMLGrid = () => {
             grid.appendChild(cellRow.cloneNode(true));
             grid.appendChild(intersectionRow.cloneNode(true));
         }
+
+    // round the corners of the grid
+    grid.firstChild.firstChild.classList.add("cornerTopLeft");
+    grid.firstChild.lastChild.classList.add("cornerTopRight");
+    grid.lastChild.firstChild.classList.add("cornerBottomLeft");
+    grid.lastChild.lastChild.classList.add("cornerBottomRight");
     
     return grid;
 }

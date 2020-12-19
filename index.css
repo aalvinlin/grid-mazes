@@ -45,3 +45,20 @@ body {
     width: 25px;
     height: 100px;
 }
+
+.cornerTopLeft {
+    border-top-left-radius: 50%;
+}
+
+.cornerTopRight {
+    border-top-right-radius: 50%;
+}
+
+.cornerBottomLeft {
+    border-bottom-left-radius: 50%;
+}
+
+.cornerBottomRight {
+    border-bottom-right-radius: 50%;
+}
+
