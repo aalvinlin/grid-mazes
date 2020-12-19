@@ -17,9 +17,11 @@
 .intersection {
     width: 10px;
     height: 10px;
+    background-color: #EEEEEE;
 }
 
 .cell {
     width: 100px;
     height: 100px;
+    background-color: #CCCCCC;
 }
