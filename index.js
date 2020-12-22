@@ -280,3 +280,8 @@ document.getElementById("content").appendChild(createHTMLGrid());
 // document.getElementById("content").appendChild(paragraph);
 
 // paragraph.textContent = JSON.stringify(decisionTree);
+
+const drawMazePath = () => {
+
+    return;
+}
