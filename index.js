@@ -287,7 +287,7 @@ const drawMazePath = (path) => {
     
     for (let direction of path)
         {
-            
+
         }
 
     return;
