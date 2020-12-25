@@ -198,6 +198,15 @@ const createDecisionTree = () => {
 const createHTMLGrid = () => {
 
     let grid = document.createElement("div");
+    
+    // use the first unused ID for the grid
+    let idNumber = 1;
+    
+    while (document.getElementByID)
+        { idNumber += 1; }
+    
+    grid.id = "maze" + idNumber;
+
     grid.class = "mazeGrid";
 
     let rows = puzzleData["rows"];
