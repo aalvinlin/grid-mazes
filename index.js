@@ -290,13 +290,15 @@ document.getElementById("content").appendChild(createHTMLGrid());
 
 // paragraph.textContent = JSON.stringify(decisionTree);
 
-const drawMazePath = (path) => {
+const drawMazePath = (path, mazeID) => {
 
-    let [currentX, currentY] = puzzleData["start"];
+    let grid = document.getElementById("maze" + mazeID);
     
+    let [currentX, currentY] = puzzleData["start"];
+
     for (let direction of path)
         {
-
+            
         }
 
     return;
