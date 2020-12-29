@@ -156,7 +156,7 @@ setStartAndEnd(0, 0, graphSize, graphSize);
 
 let allPaths = findAllSolutions();
 
-// console.log(allPaths);
+console.log(allPaths);
 
 const countPathLengths = () => {
 
@@ -292,14 +292,36 @@ document.getElementById("content").appendChild(createHTMLGrid());
 
 const drawMazePath = (path, mazeID) => {
 
+    console.log("drawing", path)
+
     let grid = document.getElementById("maze" + mazeID);
     
     let [currentX, currentY] = puzzleData["start"];
 
+    const getCurrentPathPart = (x, y) => {
+        return grid.childNodes[grid.childNodes.length - 1 - 2 * y].childNodes[2 * x].firstChild;
+    }
+
     for (let direction of path)
         {
-            
+            getCurrentPathPart(currentX, currentY).classList.add("pathActive");
+
+            console.log(direction);
+
+            if (direction === "n")
+                { currentY += 1; }
+
+            else if (direction === "s")
+                { currentY -= 1; }
+
+            else if (direction === "e")
+                { currentX += 1; }
+                
+            else if (direction === "w")
+                { currentX -= 1; }
         }
 
     return;
 }
+
+drawMazePath(Array.from(allPaths)[0], 1);
