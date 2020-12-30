@@ -298,27 +298,45 @@ const drawMazePath = (path, mazeID) => {
     
     let [currentX, currentY] = puzzleData["start"];
 
-    const getCurrentPathPart = (x, y) => {
+    const getCurrentIntersection = (x, y) => {
         return grid.childNodes[grid.childNodes.length - 1 - 2 * y].childNodes[2 * x].firstChild;
+    }
+
+    const getNextEdge = (x, y, xOffset, yOffset) => {
+        return grid.childNodes[grid.childNodes.length - 1 - 2 * y - yOffset].childNodes[2 * x + xOffset].firstChild;
     }
 
     for (let direction of path)
         {
-            getCurrentPathPart(currentX, currentY).classList.add("pathActive");
+            getCurrentIntersection(currentX, currentY).classList.add("pathActive");
 
-            console.log(direction);
+            let nextEdge;
 
             if (direction === "n")
-                { currentY += 1; }
+                {
+                    nextEdge = getNextEdge(currentX, currentY, 0, 1);
+                    currentY += 1;
+                }
 
             else if (direction === "s")
-                { currentY -= 1; }
+                {
+                    nextEdge = getNextEdge(currentX, currentY, 0, -1);
+                    currentY -= 1;
+                }
 
             else if (direction === "e")
-                { currentX += 1; }
+                {
+                    nextEdge = getNextEdge(currentX, currentY, 1, 0);
+                    currentX += 1;
+                }
                 
             else if (direction === "w")
-                { currentX -= 1; }
+                {
+                    nextEdge = getNextEdge(currentX, currentY, -1, 0);
+                    currentX -= 1;
+                }
+
+            nextEdge.classList.add("pathActive");
         }
 
     return;
