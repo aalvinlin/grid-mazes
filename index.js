@@ -342,4 +342,14 @@ const drawMazePath = (path, mazeID) => {
     return;
 }
 
+const markRegions = () => {
+
+
+}
+
+const countEdges = () => {
+
+    
+}
+
 drawMazePath(Array.from(allPaths)[0], 1);
