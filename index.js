@@ -342,11 +342,13 @@ const drawMazePath = (path, mazeID) => {
     return;
 }
 
+// returns a 2D array with a region ID located inside each square
 const markRegions = () => {
 
 
 }
 
+// returns a 2D array with the number of path edges surrounding each square
 const countEdges = () => {
 
     
