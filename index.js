@@ -359,7 +359,15 @@ const markRegions = mazeID => {
 // returns a 2D array with the number of path edges surrounding each square
 const countEdges = mazeID => {
 
-    
+    const cells = puzzleData["cells"];
+
+    for (let row of cells)
+        {
+            for (let col of cells)
+                {
+                    
+                }
+        }
 }
 
 drawMazePath(Array.from(allPaths)[0], 1);
