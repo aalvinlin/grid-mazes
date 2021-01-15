@@ -71,7 +71,7 @@ body {
     height: 100%;
 }
 
-.pathActive {
+.pathActive, .mazeStart.pathActive {
     background-color: #EEEEEE;
 }
 
